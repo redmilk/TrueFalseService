@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6835E7208CBB1D967FA2F034 /* Pods_OneMoreInstagramKFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28C7E3AE7902F4FD819E32C /* Pods_OneMoreInstagramKFR.framework */; };
 		ACB0998D1EB33B7300446022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0998C1EB33B7300446022 /* AppDelegate.swift */; };
 		ACB0998F1EB33B7300446022 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0998E1EB33B7300446022 /* ViewController.swift */; };
 		ACB099921EB33B7300446022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB099901EB33B7300446022 /* Main.storyboard */; };
 		ACB099941EB33B7300446022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB099931EB33B7300446022 /* Assets.xcassets */; };
 		ACB099971EB33B7300446022 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB099951EB33B7300446022 /* LaunchScreen.storyboard */; };
 		ACB0999F1EB33C0200446022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACB0999E1EB33C0200446022 /* GoogleService-Info.plist */; };
+		ACB099A41EB37D9900446022 /* MakeVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB099A31EB37D9900446022 /* MakeVSViewController.swift */; };
+		ACB099A61EB4A3B000446022 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB099A51EB4A3B000446022 /* DataSource.swift */; };
+		ACB099AA1EB4A48B00446022 /* TheQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB099A91EB4A48B00446022 /* TheQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131893615B0119E9BA66E64C /* Pods-OneMoreInstagramKFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMoreInstagramKFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR.release.xcconfig"; sourceTree = "<group>"; };
+		3D2514AEC8A9068941577FD7 /* Pods-OneMoreInstagramKFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMoreInstagramKFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR.debug.xcconfig"; sourceTree = "<group>"; };
 		ACB099891EB33B7300446022 /* OneMoreInstagramKFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMoreInstagramKFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB0998C1EB33B7300446022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB0998E1EB33B7300446022 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		ACB099961EB33B7300446022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB099981EB33B7300446022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB0999E1EB33C0200446022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ACB099A31EB37D9900446022 /* MakeVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeVSViewController.swift; sourceTree = "<group>"; };
+		ACB099A51EB4A3B000446022 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		ACB099A91EB4A48B00446022 /* TheQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheQuestion.swift; sourceTree = "<group>"; };
+		F28C7E3AE7902F4FD819E32C /* Pods_OneMoreInstagramKFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneMoreInstagramKFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6835E7208CBB1D967FA2F034 /* Pods_OneMoreInstagramKFR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				ACB0998B1EB33B7300446022 /* OneMoreInstagramKFR */,
 				ACB0998A1EB33B7300446022 /* Products */,
+				F814A83248243FCAFC203B89 /* Pods */,
+				C2DDD7C2ECD63568017C0516 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +69,43 @@
 		ACB0998B1EB33B7300446022 /* OneMoreInstagramKFR */ = {
 			isa = PBXGroup;
 			children = (
-				ACB0999E1EB33C0200446022 /* GoogleService-Info.plist */,
-				ACB0998C1EB33B7300446022 /* AppDelegate.swift */,
+				ACB099A91EB4A48B00446022 /* TheQuestion.swift */,
+				ACB099A51EB4A3B000446022 /* DataSource.swift */,
+				ACB099A31EB37D9900446022 /* MakeVSViewController.swift */,
 				ACB0998E1EB33B7300446022 /* ViewController.swift */,
 				ACB099901EB33B7300446022 /* Main.storyboard */,
+				ACB0998C1EB33B7300446022 /* AppDelegate.swift */,
+				ACB099A01EB3505C00446022 /* Support */,
+			);
+			path = OneMoreInstagramKFR;
+			sourceTree = "<group>";
+		};
+		ACB099A01EB3505C00446022 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0999E1EB33C0200446022 /* GoogleService-Info.plist */,
 				ACB099931EB33B7300446022 /* Assets.xcassets */,
 				ACB099951EB33B7300446022 /* LaunchScreen.storyboard */,
 				ACB099981EB33B7300446022 /* Info.plist */,
 			);
-			path = OneMoreInstagramKFR;
+			name = Support;
+			sourceTree = "<group>";
+		};
+		C2DDD7C2ECD63568017C0516 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F28C7E3AE7902F4FD819E32C /* Pods_OneMoreInstagramKFR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F814A83248243FCAFC203B89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D2514AEC8A9068941577FD7 /* Pods-OneMoreInstagramKFR.debug.xcconfig */,
+				131893615B0119E9BA66E64C /* Pods-OneMoreInstagramKFR.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACB0999B1EB33B7300446022 /* Build configuration list for PBXNativeTarget "OneMoreInstagramKFR" */;
 			buildPhases = (
+				5F34C6A22647E5E8D940F6D9 /* [CP] Check Pods Manifest.lock */,
 				ACB099851EB33B7300446022 /* Sources */,
 				ACB099861EB33B7300446022 /* Frameworks */,
 				ACB099871EB33B7300446022 /* Resources */,
+				EC4C4D74A416EA1194AA1DE4 /* [CP] Embed Pods Frameworks */,
+				49257DDA4B36EFFBFB9E686C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,12 +180,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49257DDA4B36EFFBFB9E686C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F34C6A22647E5E8D940F6D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC4C4D74A416EA1194AA1DE4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACB099851EB33B7300446022 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB099AA1EB4A48B00446022 /* TheQuestion.swift in Sources */,
 				ACB0998F1EB33B7300446022 /* ViewController.swift in Sources */,
+				ACB099A41EB37D9900446022 /* MakeVSViewController.swift in Sources */,
+				ACB099A61EB4A3B000446022 /* DataSource.swift in Sources */,
 				ACB0998D1EB33B7300446022 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +358,7 @@
 		};
 		ACB0999C1EB33B7300446022 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D2514AEC8A9068941577FD7 /* Pods-OneMoreInstagramKFR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QX2RJ9K9P5;
@@ -276,6 +372,7 @@
 		};
 		ACB0999D1EB33B7300446022 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 131893615B0119E9BA66E64C /* Pods-OneMoreInstagramKFR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QX2RJ9K9P5;
@@ -306,6 +403,7 @@
 				ACB0999D1EB33B7300446022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
