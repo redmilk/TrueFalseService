@@ -14,10 +14,12 @@ class MakeVSViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var headerTextField: UITextField!
-    @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet weak var textFieldOne: UITextField!
     @IBOutlet weak var buttonDone: UIButton!
+    @IBOutlet weak var currentDataBaseDirection: UILabel!
+    
+    var dataBaseDirection = "questions"
     
     var imagePickerOne = UIImagePickerController()
     
@@ -25,23 +27,20 @@ class MakeVSViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        currentDataBaseDirection.text = dataBaseDirection
         imagePickerOne.delegate = self
         
         let tapGestureRecognizerOne = UITapGestureRecognizer(target:self, action:#selector(imageOneTapped(img:)))
-
         imageViewOne.isUserInteractionEnabled = true
         imageViewOne.addGestureRecognizer(tapGestureRecognizerOne)
         
-        gradient = CAGradientLayer()
-        gradient.colors = [UIColor.blue.cgColor, UIColor.white.cgColor]
-        gradient.locations = [0.0 , 1.0]
-        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        gradient.zPosition = -10
-        self.view.layer.addSublayer(gradient)
-        
+        self.setupGradient()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        currentDataBaseDirection.layer.borderWidth = 0.5
+        currentDataBaseDirection.layer.borderColor = UIColor.black.cgColor
+
     }
     
     func imageOneTapped(img: AnyObject) {
@@ -62,9 +61,9 @@ class MakeVSViewController: UIViewController, UIImagePickerControllerDelegate, U
         AppDelegate.instance().showActivityIndicator()
         // MARK: - done button (saving)
         //budushiy klyuch posta v baze
-        let key = ref.child("questions").childByAutoId().key
+        let key = ref.child(dataBaseDirection).childByAutoId().key
         // v hranilishe pod Posts --> currentuser id --> klyuch nogo posta.jpg, eto budushyaya ssilka na kartinku
-        let imageRef = storage.child("questions").child("\(key).jpg")
+        let imageRef = storage.child(dataBaseDirection).child("\(key).jpg")
         //konvert image to data
         let data = UIImageJPEGRepresentation(self.imageViewOne.image!, 0.5)
         //in image future adress we put our data
@@ -88,11 +87,37 @@ class MakeVSViewController: UIViewController, UIImagePickerControllerDelegate, U
                     //post feed for database
                     let questionComplete = ["\(key)" : questionInfo]
                     //insert in posts -> post feed
-                    ref.child("questions").updateChildValues(questionComplete)
+                    ref.child(self.dataBaseDirection).updateChildValues(questionComplete)
                     AppDelegate.instance().dismissActivityIndicator()
                 }
             })
         })
         uploadTask.resume()
     }
+    
+    @IBAction func fightersPressed(_ sender: Any) {
+        self.dataBaseDirection = "fighters"
+        currentDataBaseDirection.text = "fighters"
+    }
+    @IBAction func multButtonPressed(_ sender: Any) {
+        self.dataBaseDirection = "mult"
+        currentDataBaseDirection.text = "mult"
+    }
+    @IBAction func trueFalseButtonPressed(_ sender: Any) {
+        self.dataBaseDirection = "truefalse"
+        currentDataBaseDirection.text = "truefalse"
+    }
+    
+    func setupGradient() {
+        gradient = CAGradientLayer()
+        gradient.colors = [UIColor.blue.cgColor, UIColor.white.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        gradient.zPosition = -10
+        self.view.layer.addSublayer(gradient)
+    }
+    
+    
 }

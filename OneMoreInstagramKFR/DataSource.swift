@@ -13,37 +13,16 @@
  import UIKit.UIImageView
  import Kingfisher
  
- // STACK
- struct Stack<Element> {
-    var items = [Element]()
-    mutating func push(_ item: Element) {
-        items.append(item)
-    }
-    mutating func pop() -> Element {
-        return items.removeLast()
-    }
- }
- 
- extension MutableCollection where Index == Int {
-    /// Shuffle the elements of `self` in-place.
-    mutating func shuffle() {
-        // empty and single-element collections don't shuffle
-        if count < 2 { return }
-        for i in startIndex ..< endIndex - 1 {
-            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
-            if i != j {
-                swap(&self[i], &self[j])
-            }
+ extension String {
+    func toBool() -> Bool? {
+        switch self {
+        case "True", "true", "yes", "1":
+            return true
+        case "False", "false", "no", "0":
+            return false
+        default:
+            return nil
         }
-    }
- }
- 
- extension Collection {
-    /// Return a copy of `self` with its elements shuffled
-    func shuffled() -> [Iterator.Element] {
-        var list = Array(self)
-        list.shuffle()
-        return list
     }
  }
  
@@ -55,16 +34,23 @@
     fileprivate let downloader = ImageDownloader(name: "DOWNLOADER")
     fileprivate let cache = ImageCache(name: "CACHE")
     
-    var onGetQuestionStackComplete: ((_ questionStack: Stack<TheQuestion>) -> Void)?
+    fileprivate var questionTypeDataBaseName = String()
+    
+    var onGetQuestionStackComplete: ((_ questionStack: Stack<TheQuestion>, _ questionArray: [TheQuestion]) -> Void)?
+    
+    //************************************//
+    var retrieveFrom: String = "mult_test"
+    //************************************//
     
     init() {
         downloader.downloadTimeout = 30
         cache.maxCachePeriodInSecond = -1
         cache.maxDiskCacheSize = 0
+        AppDelegate.instance().showActivityIndicator()
     }
     
     func getQuestionsFromServerOrCache() {
-        ref.child("questions").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child(retrieveFrom).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
             let retrieved = snapshot.value as! [String : AnyObject]
             print("TOTAL COUNT * = \(retrieved.count)")
             self.retrieveOrDownloadQuestions(totalCount: retrieved.count)
@@ -75,7 +61,7 @@
     fileprivate func retrieveOrDownloadQuestions(totalCount: Int) {
         print("TOTAL COUNT ** = \(totalCount)")
         var questionsCount = totalCount
-        ref.child("questions").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child(retrieveFrom).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
             self.questions.removeAll()
             
             let questions = snapshot.value as! [String : AnyObject]
@@ -148,15 +134,17 @@
     fileprivate func downLoadComplete() {
         print("Download Questions DONE")
         if onGetQuestionStackComplete != nil {
-            onGetQuestionStackComplete!(self.questionStack)
+            onGetQuestionStackComplete!(questionStack, questions)
         }
+        AppDelegate.instance().dismissActivityIndicator()
     }
     
     fileprivate func cacheRetrieveComplete() {
         print("Retrieve Questions DONE")
         if onGetQuestionStackComplete != nil {
-            onGetQuestionStackComplete!(self.questionStack)
+            onGetQuestionStackComplete!(questionStack, questions)
         }
+        AppDelegate.instance().dismissActivityIndicator()
     }
     
     
@@ -175,3 +163,39 @@
         }
     }
  }
+ 
+ 
+ // STACK
+ struct Stack<Element> {
+    var items = [Element]()
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    mutating func pop() -> Element {
+        return items.removeLast()
+    }
+ }
+ 
+ extension MutableCollection where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffle() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        for i in startIndex ..< endIndex - 1 {
+            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+            if i != j {
+                swap(&self[i], &self[j])
+            }
+        }
+    }
+ }
+ 
+ extension Collection {
+    /// Return a copy of `self` with its elements shuffled
+    func shuffled() -> [Iterator.Element] {
+        var list = Array(self)
+        list.shuffle()
+        return list
+    }
+ }
+ 

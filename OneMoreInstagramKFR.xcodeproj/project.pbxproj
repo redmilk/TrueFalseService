@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6835E7208CBB1D967FA2F034 /* Pods_OneMoreInstagramKFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28C7E3AE7902F4FD819E32C /* Pods_OneMoreInstagramKFR.framework */; };
+		AC8911911ECAF99E00AD54F2 /* TestMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8911901ECAF99E00AD54F2 /* TestMakeViewController.swift */; };
 		ACB0998D1EB33B7300446022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0998C1EB33B7300446022 /* AppDelegate.swift */; };
 		ACB0998F1EB33B7300446022 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0998E1EB33B7300446022 /* ViewController.swift */; };
 		ACB099921EB33B7300446022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB099901EB33B7300446022 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		131893615B0119E9BA66E64C /* Pods-OneMoreInstagramKFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMoreInstagramKFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR.release.xcconfig"; sourceTree = "<group>"; };
 		3D2514AEC8A9068941577FD7 /* Pods-OneMoreInstagramKFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMoreInstagramKFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR.debug.xcconfig"; sourceTree = "<group>"; };
+		AC8911901ECAF99E00AD54F2 /* TestMakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMakeViewController.swift; sourceTree = "<group>"; };
 		ACB099891EB33B7300446022 /* OneMoreInstagramKFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMoreInstagramKFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB0998C1EB33B7300446022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB0998E1EB33B7300446022 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				ACB0998E1EB33B7300446022 /* ViewController.swift */,
 				ACB099901EB33B7300446022 /* Main.storyboard */,
 				ACB0998C1EB33B7300446022 /* AppDelegate.swift */,
+				AC8911901ECAF99E00AD54F2 /* TestMakeViewController.swift */,
 				ACB099A01EB3505C00446022 /* Support */,
 			);
 			path = OneMoreInstagramKFR;
@@ -235,6 +238,7 @@
 			files = (
 				ACB099AA1EB4A48B00446022 /* TheQuestion.swift in Sources */,
 				ACB0998F1EB33B7300446022 /* ViewController.swift in Sources */,
+				AC8911911ECAF99E00AD54F2 /* TestMakeViewController.swift in Sources */,
 				ACB099A41EB37D9900446022 /* MakeVSViewController.swift in Sources */,
 				ACB099A61EB4A3B000446022 /* DataSource.swift in Sources */,
 				ACB0998D1EB33B7300446022 /* AppDelegate.swift in Sources */,
