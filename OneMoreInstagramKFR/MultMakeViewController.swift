@@ -10,20 +10,20 @@ import UIKit
 import FirebaseStorage
 import FirebaseDatabase
 
-class TestMakeViewController: UIViewController {
+class MultMakeViewController: UIViewController {
     
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var titleAsAnswerTextfield: UITextField!
     @IBOutlet weak var imageLinkTextField: UITextField!
     
-    var gradient: CAGradientLayer!
+    fileprivate let gradient = CAGradientLayer()
     
     var databaseDirection: String = "mult_test"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         destinationLabel.text = databaseDirection
-        self.setupGradient()
+        AppDelegate.instance().setupGradient(gradient: self.gradient, viewForGradient: self.view, color: UIColor.red)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,16 +74,4 @@ class TestMakeViewController: UIViewController {
         destinationLabel.text = "tf_test"
         databaseDirection = "tf_test"
     }
-    
-    func setupGradient() {
-        gradient = CAGradientLayer()
-        gradient.colors = [UIColor.red.cgColor, UIColor.white.cgColor]
-        gradient.locations = [0.0 , 1.0]
-        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        gradient.zPosition = -10
-        self.view.layer.addSublayer(gradient)
-    }
-    
 }

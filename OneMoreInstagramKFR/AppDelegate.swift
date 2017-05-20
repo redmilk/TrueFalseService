@@ -33,6 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
+    func setupGradient(gradient: CAGradientLayer, viewForGradient: UIView, color: UIColor) {
+        gradient.colors = [color.cgColor, UIColor.white.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: viewForGradient.frame.size.width, height: viewForGradient.frame.size.height)
+        gradient.zPosition = -10
+        viewForGradient.layer.addSublayer(gradient)
+    }
+    
     func showActivityIndicator() {
         if let window = window {
             self.container = UIView()

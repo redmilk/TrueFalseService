@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     var questionStack = Stack<TheQuestion>()
     var questionArray = [TheQuestion]()
     
+    fileprivate let gradient = CAGradientLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.onGetQuestionStackComplete = {(stack: Stack<TheQuestion>, array: [TheQuestion]) in
@@ -32,6 +34,8 @@ class ViewController: UIViewController {
             }
         }
         dataSource.getQuestionsFromServerOrCache()
+        
+        AppDelegate.instance().setupGradient(gradient: gradient, viewForGradient: self.view, color: UIColor.cyan)
     }
 
     fileprivate func refreshAndShuffleStack() -> Stack<TheQuestion>{
@@ -47,10 +51,7 @@ class ViewController: UIViewController {
         self.questionStack = stack
         self.questionArray = array
     }
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
 
     @IBAction func prevPressed(_ sender: Any) {
         questionStack = refreshAndShuffleStack()

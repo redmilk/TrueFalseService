@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6835E7208CBB1D967FA2F034 /* Pods_OneMoreInstagramKFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28C7E3AE7902F4FD819E32C /* Pods_OneMoreInstagramKFR.framework */; };
-		AC8911911ECAF99E00AD54F2 /* TestMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8911901ECAF99E00AD54F2 /* TestMakeViewController.swift */; };
+		AC17498B1ECD9D77005816AF /* SelectTypeOfFighterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC17498A1ECD9D77005816AF /* SelectTypeOfFighterViewController.swift */; };
+		AC8911911ECAF99E00AD54F2 /* MultMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8911901ECAF99E00AD54F2 /* MultMakeViewController.swift */; };
+		AC8911931ECC676C00AD54F2 /* TheFightersQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8911921ECC676C00AD54F2 /* TheFightersQuestion.swift */; };
+		AC8911951ECC914A00AD54F2 /* FightersDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8911941ECC914A00AD54F2 /* FightersDataModel.swift */; };
+		AC8911971ECC939600AD54F2 /* FightersMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8911961ECC939600AD54F2 /* FightersMakeViewController.swift */; };
+		AC89119A1ECCD67600AD54F2 /* FightersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8911991ECCD67600AD54F2 /* FightersViewController.swift */; };
 		ACB0998D1EB33B7300446022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0998C1EB33B7300446022 /* AppDelegate.swift */; };
 		ACB0998F1EB33B7300446022 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0998E1EB33B7300446022 /* ViewController.swift */; };
 		ACB099921EB33B7300446022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB099901EB33B7300446022 /* Main.storyboard */; };
@@ -23,7 +28,12 @@
 /* Begin PBXFileReference section */
 		131893615B0119E9BA66E64C /* Pods-OneMoreInstagramKFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMoreInstagramKFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR.release.xcconfig"; sourceTree = "<group>"; };
 		3D2514AEC8A9068941577FD7 /* Pods-OneMoreInstagramKFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMoreInstagramKFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneMoreInstagramKFR/Pods-OneMoreInstagramKFR.debug.xcconfig"; sourceTree = "<group>"; };
-		AC8911901ECAF99E00AD54F2 /* TestMakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMakeViewController.swift; sourceTree = "<group>"; };
+		AC17498A1ECD9D77005816AF /* SelectTypeOfFighterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTypeOfFighterViewController.swift; sourceTree = "<group>"; };
+		AC8911901ECAF99E00AD54F2 /* MultMakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultMakeViewController.swift; sourceTree = "<group>"; };
+		AC8911921ECC676C00AD54F2 /* TheFightersQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheFightersQuestion.swift; sourceTree = "<group>"; };
+		AC8911941ECC914A00AD54F2 /* FightersDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightersDataModel.swift; sourceTree = "<group>"; };
+		AC8911961ECC939600AD54F2 /* FightersMakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightersMakeViewController.swift; sourceTree = "<group>"; };
+		AC8911991ECCD67600AD54F2 /* FightersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightersViewController.swift; sourceTree = "<group>"; };
 		ACB099891EB33B7300446022 /* OneMoreInstagramKFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMoreInstagramKFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB0998C1EB33B7300446022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB0998E1EB33B7300446022 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +60,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC8911981ECC940C00AD54F2 /* FightersFiles */ = {
+			isa = PBXGroup;
+			children = (
+				AC8911921ECC676C00AD54F2 /* TheFightersQuestion.swift */,
+				AC8911941ECC914A00AD54F2 /* FightersDataModel.swift */,
+				AC8911961ECC939600AD54F2 /* FightersMakeViewController.swift */,
+				AC8911991ECCD67600AD54F2 /* FightersViewController.swift */,
+				AC17498A1ECD9D77005816AF /* SelectTypeOfFighterViewController.swift */,
+			);
+			name = FightersFiles;
+			sourceTree = "<group>";
+		};
 		ACB099801EB33B7300446022 = {
 			isa = PBXGroup;
 			children = (
@@ -71,13 +93,14 @@
 		ACB0998B1EB33B7300446022 /* OneMoreInstagramKFR */ = {
 			isa = PBXGroup;
 			children = (
-				ACB099A91EB4A48B00446022 /* TheQuestion.swift */,
+				AC8911981ECC940C00AD54F2 /* FightersFiles */,
 				ACB099A51EB4A3B000446022 /* DataSource.swift */,
+				ACB099A91EB4A48B00446022 /* TheQuestion.swift */,
+				AC8911901ECAF99E00AD54F2 /* MultMakeViewController.swift */,
 				ACB099A31EB37D9900446022 /* MakeVSViewController.swift */,
 				ACB0998E1EB33B7300446022 /* ViewController.swift */,
-				ACB099901EB33B7300446022 /* Main.storyboard */,
 				ACB0998C1EB33B7300446022 /* AppDelegate.swift */,
-				AC8911901ECAF99E00AD54F2 /* TestMakeViewController.swift */,
+				ACB099901EB33B7300446022 /* Main.storyboard */,
 				ACB099A01EB3505C00446022 /* Support */,
 			);
 			path = OneMoreInstagramKFR;
@@ -237,8 +260,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB099AA1EB4A48B00446022 /* TheQuestion.swift in Sources */,
+				AC8911951ECC914A00AD54F2 /* FightersDataModel.swift in Sources */,
 				ACB0998F1EB33B7300446022 /* ViewController.swift in Sources */,
-				AC8911911ECAF99E00AD54F2 /* TestMakeViewController.swift in Sources */,
+				AC17498B1ECD9D77005816AF /* SelectTypeOfFighterViewController.swift in Sources */,
+				AC8911911ECAF99E00AD54F2 /* MultMakeViewController.swift in Sources */,
+				AC89119A1ECCD67600AD54F2 /* FightersViewController.swift in Sources */,
+				AC8911971ECC939600AD54F2 /* FightersMakeViewController.swift in Sources */,
+				AC8911931ECC676C00AD54F2 /* TheFightersQuestion.swift in Sources */,
 				ACB099A41EB37D9900446022 /* MakeVSViewController.swift in Sources */,
 				ACB099A61EB4A3B000446022 /* DataSource.swift in Sources */,
 				ACB0998D1EB33B7300446022 /* AppDelegate.swift in Sources */,
@@ -364,9 +392,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D2514AEC8A9068941577FD7 /* Pods-OneMoreInstagramKFR.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QX2RJ9K9P5;
 				INFOPLIST_FILE = OneMoreInstagramKFR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pq.OneMoreInstagramKFR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -378,9 +408,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 131893615B0119E9BA66E64C /* Pods-OneMoreInstagramKFR.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QX2RJ9K9P5;
 				INFOPLIST_FILE = OneMoreInstagramKFR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pq.OneMoreInstagramKFR;
 				PRODUCT_NAME = "$(TARGET_NAME)";

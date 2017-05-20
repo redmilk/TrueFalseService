@@ -13,6 +13,8 @@
  import UIKit.UIImageView
  import Kingfisher
  
+ 
+ 
  extension String {
     func toBool() -> Bool? {
         switch self {
@@ -26,19 +28,54 @@
     }
  }
  
+ // STACK
+ struct Stack<Element> {
+    var items = [Element]()
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    mutating func pop() -> Element {
+        return items.removeLast()
+    }
+ }
+ 
+ extension MutableCollection where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffle() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        for i in startIndex ..< endIndex - 1 {
+            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+            if i != j {
+                swap(&self[i], &self[j])
+            }
+        }
+    }
+ }
+ 
+ extension Collection {
+    /// Return a copy of `self` with its elements shuffled
+    func shuffled() -> [Iterator.Element] {
+        var list = Array(self)
+        list.shuffle()
+        return list
+    }
+ }
+
+ ///////////////////////////////////////////////
+ //*****************CLASS*********************//
  class DataSource {
     
     fileprivate var questionStack = Stack<TheQuestion>()
     fileprivate var questions = [TheQuestion]()
-    
     fileprivate let downloader = ImageDownloader(name: "DOWNLOADER")
     fileprivate let cache = ImageCache(name: "CACHE")
     
     fileprivate var questionTypeDataBaseName = String()
     
+    //*************************************// complition handler
     var onGetQuestionStackComplete: ((_ questionStack: Stack<TheQuestion>, _ questionArray: [TheQuestion]) -> Void)?
-    
-    //************************************//
+    //************************************//  retrieving source
     var retrieveFrom: String = "mult_test"
     //************************************//
     
@@ -146,10 +183,7 @@
         }
         AppDelegate.instance().dismissActivityIndicator()
     }
-    
-    
-    
-    
+ 
     /*** PUBLIC ***/// MARK: -PUBLIC
     
     func getQuestionStack() -> Stack<TheQuestion> {
@@ -165,37 +199,8 @@
  }
  
  
- // STACK
- struct Stack<Element> {
-    var items = [Element]()
-    mutating func push(_ item: Element) {
-        items.append(item)
-    }
-    mutating func pop() -> Element {
-        return items.removeLast()
-    }
- }
- 
- extension MutableCollection where Index == Int {
-    /// Shuffle the elements of `self` in-place.
-    mutating func shuffle() {
-        // empty and single-element collections don't shuffle
-        if count < 2 { return }
-        for i in startIndex ..< endIndex - 1 {
-            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
-            if i != j {
-                swap(&self[i], &self[j])
-            }
-        }
-    }
- }
- 
- extension Collection {
-    /// Return a copy of `self` with its elements shuffled
-    func shuffled() -> [Iterator.Element] {
-        var list = Array(self)
-        list.shuffle()
-        return list
-    }
- }
+    
+    
+    
+
  
